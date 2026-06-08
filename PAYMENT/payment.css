@@ -1,0 +1,211 @@
+body {
+  background-color: #f0f0db;
+  font-family: "Changa One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 40px 20px;
+  padding-top: 80px;
+}
+
+.navbar {
+  background-color: #30364f;
+  padding: 15px 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav-link {
+  color: #acbac4;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  background-color: rgba(240, 240, 219, 0.1);
+}
+
+.nav-link.active {
+  color: #30364f;
+  background-color: #f0f0db;
+}
+
+.order-title {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 30px;
+}
+
+.cart-container {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.cart-items {
+  background-color: #acbac4;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.item-details h3 {
+  margin: 0 0 6px 0;
+  color: #30364f;
+  font-size: 20px;
+}
+
+.item-details p {
+  margin: 3px 0;
+  color: #4a5375;
+  font-size: 15px;
+}
+
+.remove-btn {
+  background-color: #30364f;
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.2s ease;
+}
+
+.remove-btn svg {
+  width: 25px;
+  height: 25px;
+}
+
+.remove-btn:hover {
+  background-color: #d9534f;
+  transform: scale(1.15);
+}
+
+.cart-summary {
+  background-color: #30364f;
+  color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.cart-summary h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #acbac4;
+}
+
+.total-price {
+  font-size: 36px;
+  font-weight: bold;
+  color: #f0f0db;
+  text-align: center;
+}
+
+.order-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+  border-top: 3px solid rgba(240, 240, 219, 0.2);
+  padding-top: 20px;
+}
+
+.order-form h2 {
+  font-size: 20px;
+  color: #f0f0db;
+  margin: 0 0 5px 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+}
+
+.form-group label {
+  color: #acbac4;
+  font-size: 14px;
+}
+
+.form-group input {
+  background-color: #f0f0db;
+  color: #30364f;
+  border: 2px solid transparent;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-family: sans-serif;
+  font-size: 15px;
+  outline: #4a5375;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: #30364f;
+  background-color: #ffffff;
+}
+
+.checkout-btn {
+  background-color: #f0f0db;
+  color: #30364f;
+  font-family: "Changa One", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.checkout-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}

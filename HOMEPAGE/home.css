@@ -1,0 +1,115 @@
+#main_title {
+  font-size: 50px;
+  color: #30364f;
+  margin-bottom: 20px;
+  font-family: "Changa One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#home_page {
+  background-color: #f0f0db;
+  padding: 20px;
+}
+
+.font {
+  font-family: "Changa One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#second_title {
+  font-size: 35px;
+  color: #acbac4;
+  margin-left: 15%;
+}
+
+.line_break {
+  margin-bottom: 20px;
+  height: 3px;
+  background-color: #30364f;
+}
+
+#log_in_button {
+  background-color: #acbac4;
+  color: #30364f;
+  padding: 4px 4px;
+  border: 2px solid #30364f;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#password {
+  background-color: #acbac4;
+  color: #30364f;
+  border: 2px solid #30364f;
+  font-size: 16px;
+  padding: 4px 4px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+#log_in_button:hover {
+  background-color: #d9e5ee;
+}
+
+.shirt_image {
+  width: 30%;
+  height: auto;
+  object-fit: cover;
+  margin: 10px;
+  border: 3px solid #acbac4;
+  border-radius: 5px;
+  margin: 1%;
+}
+
+#order {
+  text-decoration: none;
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #30364f;
+  font-size: 100px;
+  text-align: center;
+  display: block;
+}
+
+.navbar {
+  background-color: #30364f;
+  padding: 15px 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav-link {
+  color: #acbac4;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  background-color: rgba(240, 240, 219, 0.1);
+}
+
+.nav-link.active {
+  color: #30364f;
+  background-color: #f0f0db;
+}

@@ -1,0 +1,150 @@
+body {
+  background-color: #f0f0db;
+  color: #30364f;
+  margin: 0 20px 40px 20px;
+  padding: 10px;
+  padding-top: 100px;
+  font-family: "Changa One", "Rubik", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.navbar {
+  background-color: #30364f;
+  padding: 15px 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav-link {
+  color: #acbac4;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+}
+
+.nav-link:hover {
+  color: #f0f0db;
+  background-color: rgba(240, 240, 219, 0.1);
+}
+
+.nav-link.active {
+  color: #30364f;
+  background-color: #f0f0db;
+}
+
+h1 {
+  font-size: 42px;
+  color: #30364f;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 26px;
+  color: #30364f;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(48, 54, 79, 0.08);
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 800px;
+}
+
+th,
+td {
+  padding: 18px 24px;
+  text-align: left;
+  border-bottom: 1px solid rgba(172, 186, 196, 0.4);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+th {
+  background-color: #30364f;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 18px;
+  font-family: "Changa One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+td {
+  font-size: 18px;
+}
+
+tr:hover td {
+  background-color: #f8f8f2;
+  transition: background-color 0.2s ease;
+}
+
+.add-inventory-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+.admin-input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #acbac4;
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  color: #30364f;
+  background-color: #ffffff;
+  outline: none;
+}
+
+.add-btn {
+  background-color: #30364f;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+  background-color: #acbac4;
+  color: #30364f;
+}

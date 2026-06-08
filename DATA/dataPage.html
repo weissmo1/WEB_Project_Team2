@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="he">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MI-SHIRT - ניהול מלאי והזמנות</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Changa+One:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dataPage.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="../HOMEPAGE/homePage.html" class="nav-link">Catalog</a>
+        <a href="../ORDER/orderPage.html" class="nav-link">Shop</a>
+        <a href="../PAYMENT/paymentPage.html" class="nav-link">Order Summary</a>
+        <a href="dataPage.html" class="nav-link active">Admin</a>
+      </div>
+    </nav>
+
+    <h1>Orders and Inventory</h1>
+
+    <h2>Inventory</h2>
+    <div class="table-wrapper">
+      <table id="inventoryTable"></table>
+    </div>
+
+    <h2>Add Inventory</h2>
+    <div class="add-inventory-container">
+      <select id="add-shirt-type" class="admin-input">
+        <option value="With The Wind">With The Wind</option>
+        <option value="MFKDT Vision">MFKDT Vision</option>
+        <option value="Carhatt- MFKDT Style">Carhatt- MFKDT Style</option>
+        <option value="Fly High">Fly High</option>
+        <option value="GOOSE Vibes">GOOSE Vibes</option>
+        <option value="The PACLAPAT !">The PACLAPAT !</option>
+        <option value="For The SARBAL">For The SARBAL</option>
+        <option value="SHLAVIM">SHLAVIM</option>
+        <option value="GOOSE-Emec">GOOSE-Emec</option>
+      </select>
+
+      <select id="add-shirt-size" class="admin-input">
+        <option value="sizeS">S</option>
+        <option value="sizeM">M</option>
+        <option value="sizeL">L</option>
+        <option value="sizeXL">XL</option>
+      </select>
+
+      <input
+        type="number"
+        id="add-shirt-qty"
+        class="admin-input"
+        min="1"
+        value="1"
+      />
+
+      <button onclick="addInventory()" class="add-btn">+</button>
+    </div>
+
+    <h2>Orders</h2>
+    <div class="table-wrapper">
+      <table id="ordersTable"></table>
+    </div>
+
+    <script src="dataPage.JS"></script>
+
+    <button
+      onclick="resetSystem()"
+      style="
+        background-color: #d9534f;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-family: &quot;Changa One&quot;, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        margin-bottom: 20px;
+      "
+    >
+      Reset System 🔄
+    </button>
+  </body>
+</html>

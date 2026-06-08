@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Changa+One:ital@0;1&display=swap" rel="stylesheet">
+    </head>
+    <title>TOTAL</title>
+    <link rel="stylesheet" href="payment.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="../HOMEPAGE/homePage.html" class="nav-link">Catalog</a>
+
+        <a href="../ORDER/orderPage.html" class="nav-link">Shop</a>
+
+        <a href="../paymentPage.html" class="nav-link active">Order Summary</a>
+      </div>
+    </nav>
+
+    <h1 class="order-title" style="color: #30364f">Order Summary</h1>
+
+    <div class="cart-container">
+      <div class="cart-items" id="cart-items-list"></div>
+
+      <div class="cart-summary">
+        <div class="price-box">
+          <h2>Total Price:</h2>
+          <div class="total-price" id="total-price-display">79$</div>
+        </div>
+
+        <form class="order-form">
+          <h2>Personal Details:</h2>
+
+          <div class="form-group">
+            <label for="full-name">Full Name *</label>
+            <input
+              type="text"
+              id="full-name"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="course-stage">Course Stage *</label>
+            <input
+              type="text"
+              id="course-stage"
+              placeholder="e.g., Stage 3 / Staff"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" placeholder="050-0000000" required />
+          </div>
+
+          <button type="submit" class="checkout-btn" href="payBox.html">
+            Place Order (PayBox)
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="payment.JS"></script>
+  </body>
+</html>

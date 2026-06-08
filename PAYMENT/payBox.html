@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <title>PayBox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Changa+One:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    style="
+      font-family: &quot;Changa One&quot;, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      background-color: #f0f0db;
+      color: #30364f;
+      padding: 20px;
+      text-align: center;
+    "
+  >
+    <h2 style="text-align: left">Thank You for ordering MFKDT shirts!</h2>
+
+    <p style="font-size: 16px; text-align: left">
+      Your order has been received and is being processed.
+    </p>
+
+    <p>Total to pay: <span id="display-final-price">0</span>$</p>
+    <br />
+
+    <a
+      href="https://links.payboxapp.com/FTeoJs5yd3b"
+      style="
+        text-align: center;
+        text-decoration: none;
+        font-family: &quot;Caveat&quot;, cursive;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        color: #30364f;
+        font-size: 26px;
+      "
+      >Pay Now!</a
+    >
+
+    <div
+      style="
+        width: 50%;
+        height: auto;
+        text-align: center;
+        margin: auto;
+        margin-top: 20px;
+      "
+    >
+      <img
+        src="../PICTURES/paybox.png"
+        alt="PayBox QR Code"
+        style="width: 50%; height: auto; border-radius: 10%"
+      />
+    </div>
+
+    <script>
+      var priceToPay = sessionStorage.getItem("finalPrice");
+      document.getElementById("display-final-price").textContent = priceToPay;
+    </script>
+  </body>
+</html>

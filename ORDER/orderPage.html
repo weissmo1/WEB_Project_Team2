@@ -1,0 +1,394 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Order</title>
+    <link rel="stylesheet" href="order.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Changa+One:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body id="order_page">
+    <nav class="navbar font">
+      <div class="nav-container">
+        <a href="../HOMEPAGE/homePage.html" class="nav-link">Home</a>
+        <a href="../ORDER/orderPage.html" class="nav-link active">Shop</a>
+        <a href="../PAYMENT/paymentPage.html" class="nav-link">Order Summary</a>
+        <a href="../PAYMENT/paymentPage.html"
+          ><button
+            class="font cart"
+            style="
+              position: absolute;
+              right: 2%;
+              font-size: 24px;
+              width: 40px;
+              height: 40px;
+              text-decoration: none;
+            "
+          >
+            🛒
+          </button></a
+        >
+      </div>
+    </nav>
+    <br />
+
+    <h1 id="main_title" class="font">ORDER NOW</h1>
+    <hr class="line_break" />
+    <h2 id="second_title" class="font" ;>ORDER SOME MIFKETED SHIRTS !</h2>
+
+    <h2 id="second_title" class="font">EVERY SHIRT - 40$!</h2>
+
+    <div class="shirts-container">
+      <div class="shirt_div">
+        <div class="name">
+          <h3 class="font h3">With The Wind</h3>
+        </div>
+        <div class="inside">
+          <div class="left_side">
+            <label for="size" class="font row_item">Size: </label>
+            <select class="choose font" name="size">
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+              <option value="xlarge">X-Large</option>
+            </select>
+            <br />
+
+            <div class="row_item">
+              <label for="quantity" class="font">Quantity: </label>
+              <select class="choose font" name="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <div
+              id="errorMessage"
+              style="
+                color: red;
+                font-size: 14px;
+                margin-top: 5px;
+                display: none;
+              "
+            ></div>
+            <br />
+            <button
+              class="font cart cart-btn"
+              id="cart"
+              onclick="addToCart(event)"
+            >
+              Add To Cart 🛒
+            </button>
+          </div>
+
+          <div class="right_side">
+            <img src="../SHIRTS/WDWB.png" alt="WTWB" class="shirt_image" />
+          </div>
+        </div>
+      </div>
+
+      <div class="shirt_div">
+        <div class="name">
+          <h3 class="font h3">MFKDT Vision</h3>
+        </div>
+        <div class="inside">
+          <div class="left_side">
+            <label for="size" class="font row_item">Size: </label>
+            <select class="choose font" name="size">
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+              <option value="xlarge">X-Large</option>
+            </select>
+            <br />
+
+            <div class="row_item">
+              <label for="quantity" class="font">Quantity: </label>
+              <select class="choose font" name="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <br />
+            <button class="font cart" onclick="addToCart(event)">
+              Add To Cart 🛒
+            </button>
+          </div>
+
+          <div class="right_side">
+            <img src="../SHIRTS/VISIW.png" alt="WTWB" class="shirt_image" />
+          </div>
+        </div>
+      </div>
+
+      <div class="shirt_div">
+        <div class="name">
+          <h3 class="font h3">Carhatt- MFKDT Style</h3>
+        </div>
+        <div class="inside">
+          <div class="left_side">
+            <label for="size" class="font row_item">Size: </label>
+            <select class="choose font" name="size">
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+              <option value="xlarge">X-Large</option>
+            </select>
+            <br />
+
+            <div class="row_item">
+              <label for="quantity" class="font">Quantity: </label>
+              <select class="choose font" name="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <br />
+            <button class="font cart" onclick="addToCart(event)">
+              Add To Cart 🛒
+            </button>
+          </div>
+
+          <div class="right_side">
+            <img src="../SHIRTS/CARHAT.png" alt="WTWB" class="shirt_image" />
+          </div>
+        </div>
+      </div>
+
+      <div class="shirt_div">
+        <div class="name">
+          <h3 class="font h3">Fly High</h3>
+        </div>
+        <div class="inside">
+          <div class="left_side">
+            <label for="size" class="font row_item">Size: </label>
+            <select class="choose font" name="size">
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+              <option value="xlarge">X-Large</option>
+            </select>
+            <br />
+
+            <div class="row_item">
+              <label for="quantity" class="font">Quantity: </label>
+              <select class="choose font" name="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <br />
+            <button class="font cart" onclick="addToCart(event)">
+              Add To Cart 🛒
+            </button>
+          </div>
+
+          <div class="right_side">
+            <img src="../SHIRTS/FLYHI.png" alt="WTWB" class="shirt_image" />
+          </div>
+        </div>
+      </div>
+
+      <div class="shirt_div">
+        <div class="name">
+          <h3 class="font h3">GOOSE Vibes</h3>
+        </div>
+        <div class="inside">
+          <div class="left_side">
+            <label for="size" class="font row_item">Size: </label>
+            <select class="choose font" name="size">
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+              <option value="xlarge">X-Large</option>
+            </select>
+            <br />
+
+            <div class="row_item">
+              <label for="quantity" class="font">Quantity: </label>
+              <select class="choose font" name="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <br />
+            <button class="font cart" onclick="addToCart(event)">
+              Add To Cart 🛒
+            </button>
+          </div>
+
+          <div class="right_side">
+            <img src="../SHIRTS/GVIBESB.png" alt="WTWB" class="shirt_image" />
+          </div>
+        </div>
+      </div>
+
+      <div class="shirt_div">
+        <div class="name">
+          <h3 class="font h3">The PACLAPAT !</h3>
+        </div>
+        <div class="inside">
+          <div class="left_side">
+            <label for="size" class="font row_item">Size: </label>
+            <select class="choose font" name="size">
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+              <option value="xlarge">X-Large</option>
+            </select>
+            <br />
+
+            <div class="row_item">
+              <label for="quantity" class="font">Quantity: </label>
+              <select class="choose font" name="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <br />
+            <button class="font cart" onclick="addToCart(event)">
+              Add To Cart 🛒
+            </button>
+          </div>
+
+          <div class="right_side">
+            <img src="../SHIRTS/PACLA.png" alt="WTWB" class="shirt_image" />
+          </div>
+        </div>
+      </div>
+
+      <div class="shirt_div">
+        <div class="name">
+          <h3 class="font h3">For The SARBAL</h3>
+        </div>
+        <div class="inside">
+          <div class="left_side">
+            <label for="size" class="font row_item">Size: </label>
+            <select class="choose font" name="size">
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+              <option value="xlarge">X-Large</option>
+            </select>
+            <br />
+
+            <div class="row_item">
+              <label for="quantity" class="font">Quantity: </label>
+              <select class="choose font" name="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <br />
+            <button class="font cart" onclick="addToCart(event)">
+              Add To Cart 🛒
+            </button>
+          </div>
+
+          <div class="right_side">
+            <img src="../SHIRTS/SARBALW.png" alt="WTWB" class="shirt_image" />
+          </div>
+        </div>
+      </div>
+
+      <div class="shirt_div">
+        <div class="name">
+          <h3 class="font h3">GOOSE-Emec</h3>
+        </div>
+        <div class="inside">
+          <div class="left_side">
+            <label for="size" class="font row_item">Size: </label>
+            <select class="choose font" name="size">
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+              <option value="xlarge">X-Large</option>
+            </select>
+            <br />
+
+            <div class="row_item">
+              <label for="quantity" class="font">Quantity: </label>
+              <select class="choose font" name="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <br />
+            <button class="font cart" onclick="addToCart(event)">
+              Add To Cart 🛒
+            </button>
+          </div>
+
+          <div class="right_side">
+            <img src="../SHIRTS/SEGEL.png" alt="WTWB" class="shirt_image" />
+          </div>
+        </div>
+      </div>
+
+      <div class="shirt_div">
+        <div class="name">
+          <h3 class="font h3">SHLAVIM</h3>
+        </div>
+        <div class="inside">
+          <div class="left_side">
+            <label for="size" class="font row_item">Size: </label>
+            <select class="choose font" name="size">
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+              <option value="xlarge">X-Large</option>
+            </select>
+            <br />
+
+            <div class="row_item">
+              <label for="quantity" class="font">Quantity: </label>
+              <select class="choose font" name="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <br />
+            <button class="font cart" onclick="addToCart(event)">
+              Add To Cart 🛒
+            </button>
+          </div>
+
+          <div class="right_side">
+            <img src="../SHIRTS/SHLAVW.png" alt="WTWB" class="shirt_image" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="order.js"></script>
+  </body>
+</html>
