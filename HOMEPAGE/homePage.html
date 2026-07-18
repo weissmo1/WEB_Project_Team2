@@ -1,4 +1,4 @@
-<!DOCTYPE >
+<!DOCTYPE html>
 <html>
   <head>
     <title>Home Page</title>
@@ -9,9 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Changa+One:ital@0;1&display=swap"
       rel="stylesheet"
     />
+        <link rel="icon" type="image/jpeg" href="../SHIRTS/GPM.png">
   </head>
 
-  <body id="home_page">
+  <body id="home_page" style="text-align: center;">
     <nav class="navbar font">
       <div class="nav-container">
         <a href="homePage.html" class="nav-link active">Home</a>
@@ -19,13 +20,13 @@
         <a href="../PAYMENT/paymentPage.html" class="nav-link">Order Summary</a>
       </div>
     </nav>
-    <br />
-
-    <h1 id="main_title" class="font">MI - SHIRTS</h1>
+    <br/>
+    <br/> 
+    <h1 id="main_title" class="font" style="text-align: center; margin: 20px auto;">MI - SHIRTS</h1>
     <hr class="line_break" />
-    <h2 id="second_title" class="font">CATALOG</h2>
+    <h2 id="second_title" class="font" style="text-align: center; margin: 20px auto;">CATALOG</h2>
 
-    <div id="catalog">
+    <div id="catalog" style="text-align: center; margin: 0 auto;">
       <img src="../PICTURES/P1.jpg" alt="Shirt 1" class="shirt_image" />
       <img src="../PICTURES/P2.jpg" alt="Shirt 2" class="shirt_image" />
       <img src="../PICTURES/P3.jpg" alt="Shirt 3" class="shirt_image" />
@@ -35,13 +36,14 @@
       <img src="../PICTURES/P7.jpg" alt="Shirt 7" class="shirt_image" />
       <img src="../PICTURES/P8.jpg" alt="Shirt 8" class="shirt_image" />
       <img src="../PICTURES/P9.jpg" alt="Shirt 9" class="shirt_image" />
-      <a href="../ORDER/orderPage.html" id="order">Order Now</a>
+      <br /><br />
+      <a href="../ORDER/orderPage.html" id="order" style="display: inline-block; margin-top: 15px;">Order Now</a>
     </div>
     <br />
     <hr class="line_break" />
 
-    <h3 id="third_title" class="font" style="font-size: 30px">ABOUT</h3>
-    <p id="about_text" class="font" style="font-size: 18px; margin-left: 3%">
+    <h3 id="third_title" class="font" style="font-size: 30px; text-align: center; margin: 20px auto;">ABOUT</h3>
+    <p id="about_text" class="font" style="font-size: 18px; max-width: 800px; margin: 0 auto; text-align: center; line-height: 1.6;">
       It was important to MFKDT 194 that you walk around in style, and to make
       the BIST a more beautiful place. We’ve put together some amazing,
       high-quality shirts for you, and the ordering process is super interactive
@@ -50,27 +52,20 @@
       054-548-6679
     </p>
     <br /><br /><br /><br />
-    <form
-      class="font"
-      id="loginForm"
-      method="post"
-      action="../DATA/dataPage.html"
-    >
-      <label style="color: #30364f">To Data Page :</label><br /><br />
-      <label for="password" style="color: #30364f; margin-left: 3%"
-        >Password:
-      </label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        placeholder="********"
-      />
+    
+    <form class="font" id="loginForm" style="text-align: left ; margin: 0 auto;">
+      <label style="color: #30364f;">To Data Page :</label><br /><br />
+      
+      <label for="username" style="color: #30364f;">Username: </label>
+      <input type="text" id="username" name="username" placeholder="Username" required />
+      <br /><br />
+
+      <label for="password" style="color: #30364f;">Password: </label>
+      <input type="password" id="password" name="password" placeholder="********" required />
+      <br /><br />
+      
       <button type="submit" id="log_in_button" class="font">Log In</button>
-      <div
-        id="errorMessage"
-        style="color: red; font-size: 14px; margin-top: 5px; display: none"
-      ></div>
+      <div id="errorMessage" style="color: red; font-size: 14px; margin-top: 5px; display: none;"></div>
     </form>
 
     <script src="home.js"></script>

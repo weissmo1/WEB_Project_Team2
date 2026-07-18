@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: #f0f0db;
   color: #30364f;
@@ -113,38 +119,101 @@ tr:hover td {
 
 .add-inventory-container {
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
   gap: 15px;
   margin-bottom: 40px;
-  align-items: center;
+  flex-wrap: wrap;
 }
 
 .admin-input {
-  padding: 10px 15px;
-  border-radius: 8px;
-  border: 1px solid #acbac4;
-  font-family: "Rubik", sans-serif;
+  font-family: "Changa One", "Rubik", sans-serif;
   font-size: 16px;
   color: #30364f;
   background-color: #ffffff;
+  border: 2px solid #30364f;
+  border-radius: 8px;
+  padding: 0 10px;
   outline: none;
+  box-shadow: 0 2px 5px rgba(48, 54, 79, 0.05);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  height: 44px;
+  box-sizing: border-box;
+  text-align: center;
+  text-align-last: center;
+}
+
+.admin-input:focus {
+  border-color: #acbac4;
+  box-shadow: 0 0 8px rgba(48, 54, 79, 0.2);
+}
+
+#add-shirt-type {
+  flex: 2;
+  min-width: 220px;
+  cursor: pointer;
+}
+
+#add-shirt-size {
+  flex: 0 0 110px;
+  cursor: pointer;
+}
+
+#add-shirt-qty {
+  flex: 0 0 70px;
 }
 
 .add-btn {
+  font-family: "Changa One", "Rubik", sans-serif;
   background-color: #30364f;
   color: #ffffff;
   border: none;
   border-radius: 8px;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
   font-size: 24px;
+  font-weight: bold;
   cursor: pointer;
+  box-shadow: 0 4px 10px rgba(48, 54, 79, 0.15);
+  transition: background-color 0.2s, transform 0.1s;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  line-height: 1;
 }
 
 .add-btn:hover {
   background-color: #acbac4;
   color: #30364f;
+  transform: translateY(-2px);
+}
+
+.add-btn:active {
+  transform: translateY(0);
+}
+
+button[onclick="resetSystem()"] {
+  font-family: "Changa One", "Rubik", sans-serif;
+  background-color: #d9534f;
+  color: #ffffff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(48, 54, 79, 0.15);
+  transition: background-color 0.2s, transform 0.1s;
+  margin: 20px auto;
+  display: inline-block;
+}
+
+button[onclick="resetSystem()"]:hover {
+  background-color: #c9302c;
+  transform: translateY(-2px);
+}
+
+button[onclick="resetSystem()"]:active {
+  transform: translateY(0);
 }

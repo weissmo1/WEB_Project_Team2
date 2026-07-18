@@ -1,91 +1,100 @@
-var initialInventory = [
-  { type: "With The Wind", sizeS: 20, sizeM: 20, sizeL: 20, sizeXL: 20 },
-  { type: "MFKDT Vision", sizeS: 20, sizeM: 20, sizeL: 20, sizeXL: 20 },
-  { type: "Carhatt- MFKDT Style", sizeS: 20, sizeM: 20, sizeL: 20, sizeXL: 20 },
-  { type: "Fly High", sizeS: 20, sizeM: 20, sizeL: 20, sizeXL: 20 },
-  { type: "GOOSE Vibes", sizeS: 20, sizeM: 20, sizeL: 20, sizeXL: 20 },
-  { type: "The PACLAPAT !", sizeS: 20, sizeM: 20, sizeL: 20, sizeXL: 20 },
-  { type: "For The SARBAL", sizeS: 20, sizeM: 20, sizeL: 20, sizeXL: 20 },
-  { type: "SHLAVIM", sizeS: 20, sizeM: 20, sizeL: 20, sizeXL: 20 },
-  { type: "GOOSE-Emec", sizeS: 20, sizeM: 20, sizeL: 20, sizeXL: 20 },
-];
-
 function addToCart(event) {
+  // מניעת רענון העמוד בעת לחיצה על כפתור השליחה
+  event.preventDefault();
+  
   var clickedButton = event.target;
   var shirtContainer = clickedButton.closest(".shirt_div");
-  var shirtName = shirtContainer.querySelector(".name h3").textContent;
+  
+  // שליפת פרטי החולצה מתוך מבנה העמוד
+  var shirtName = shirtContainer.querySelector(".name h3").textContent.trim();
   var shirtSize = shirtContainer.querySelector('select[name="size"]').value;
-  var shirtQuantity = parseInt(
-    shirtContainer.querySelector('select[name="quantity"]').value,
-  );
-  var currentInventory = JSON.parse(localStorage.getItem("inventoryList"));
-  if (!currentInventory || currentInventory.length === 0) {
-    currentInventory = initialInventory;
-    localStorage.setItem("inventoryList", JSON.stringify(initialInventory));
-  }
-  var sizeKey = "sizeM";
-  if (shirtSize === "small") sizeKey = "sizeS";
-  else if (shirtSize === "medium") sizeKey = "sizeM";
-  else if (shirtSize === "large") sizeKey = "sizeL";
-  else if (shirtSize === "xlarge") sizeKey = "sizeXL";
-  var inventoryItem = currentInventory.find(
-    (inv) => inv.type.toLowerCase().trim() === shirtName.toLowerCase().trim(),
-  );
-  var availableStock = inventoryItem ? inventoryItem[sizeKey] : 0;
-  var currentCart = JSON.parse(sessionStorage.getItem("cart")) || [];
+  var shirtQuantity = parseInt(shirtContainer.querySelector('select[name="quantity"]').value) || 1;
 
-  var alreadyInCart = 0;
-  currentCart.forEach((item) => {
-    if (item.name === shirtName && item.size === shirtSize) {
-      alreadyInCart += item.quantity;
-    }
-  });
+  // שליפת נתוני המלאי מהשרת לבדיקה לפני הוספה לעגלה
+  fetch('/inventory')
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(inventoryData) {
+      var shirtInDb = null;
 
-  var totalRequested = shirtQuantity + alreadyInCart;
-  if (totalRequested > availableStock) {
-    alert(
-      "Sorry! Only " +
-        availableStock +
-        " units left in stock for " +
-        shirtName +
-        " (Size: " +
-        shirtSize.toUpperCase() +
-        ")",
-    );
-    return;
-  }
-  var ball = document.createElement("div");
-  ball.classList.add("flying_ball");
+      // איתור החולצה המבוקשת במערך הנתונים שהתקבל מהשרת
+      for (var i = 0; i < inventoryData.length; i++) {
+        if (inventoryData[i].type === shirtName) {
+          shirtInDb = inventoryData[i];
+          break;
+        }
+      }
 
-  ball.style.top = event.clientY + "px";
-  let startRightPosition = window.innerWidth - event.clientX;
-  ball.style.right = startRightPosition + "px";
+      if (!shirtInDb) {
+        alert("Error: Shirt not found in inventory.");
+        return;
+      }
 
-  document.body.appendChild(ball);
+      // התאמת שם המידה מהטופס לשם העמודה במסד הנתונים
+      var sizeColumn = "sizeM";
+      if (shirtSize === "small" || shirtSize === "S") sizeColumn = "sizeS";
+      else if (shirtSize === "medium" || shirtSize === "M") sizeColumn = "sizeM";
+      else if (shirtSize === "large" || shirtSize === "L") sizeColumn = "sizeL";
+      else if (shirtSize === "xlarge" || shirtSize === "XL") sizeColumn = "sizeXL";
 
-  setTimeout(function () {
-    ball.style.transition = "all 0.3s ease-out";
-    ball.style.right = startRightPosition - 60 + "px";
-    ball.style.transform = "scale(1.3)";
-  }, 10);
+      var availableStock = shirtInDb[sizeColumn] || 0;
 
-  setTimeout(function () {
-    ball.style.transition = "all 0.8s ease-in-out";
-    ball.style.top = "2%";
-    ball.style.right = "2%";
-    ball.style.transform = "scale(0.2)";
-  }, 450);
+      // שליפת העגלה מזיכרון הדפדפן וחישוב כמות הפריטים מאותו סוג שכבר הוספו
+      var currentCart = JSON.parse(localStorage.getItem("cart")) || [];
+      var quantityAlreadyInCart = 0;
 
-  setTimeout(function () {
-    ball.remove();
-  }, 1250);
+      for (var j = 0; j < currentCart.length; j++) {
+        if (currentCart[j].shirtId === shirtName && currentCart[j].size === shirtSize) {
+          quantityAlreadyInCart += parseInt(currentCart[j].quantity);
+        }
+      }
 
-  var shirt = {
-    name: shirtName,
-    size: shirtSize,
-    quantity: shirtQuantity,
-  };
+      // חסימת ההוספה והצגת הודעה אם הכמות המבוקשת חורגת מהמלאי הזמין
+      if (quantityAlreadyInCart + shirtQuantity > availableStock) {
+        alert("Cannot add to cart. Only " + availableStock + " items available in stock for this size.");
+        return;
+      }
 
-  currentCart.push(shirt);
-  sessionStorage.setItem("cart", JSON.stringify(currentCart));
+      // הפעלת האנימציה ויצירת כדור מעופף לעבר סמל העגלה
+      var ball = document.createElement("div");
+      ball.classList.add("flying_ball");
+
+      ball.style.top = event.clientY + "px";
+      var startRightPosition = window.innerWidth - event.clientX;
+      ball.style.right = startRightPosition + "px";
+
+      document.body.appendChild(ball);
+
+      setTimeout(function () {
+        ball.style.transition = "all 0.3s ease-out";
+        ball.style.right = startRightPosition - 60 + "px";
+        ball.style.transform = "scale(1.3)";
+      }, 10);
+
+      setTimeout(function () {
+        ball.style.transition = "all 0.8s ease-in-out";
+        ball.style.top = "2%";
+        ball.style.right = "2%";
+        ball.style.transform = "scale(0.2)";
+      }, 450);
+
+      setTimeout(function () {
+        ball.remove();
+      }, 1250);
+
+      // הוספת הפריט החדש למערך העגלה ושמירתו בזיכרון המקומי
+      var shirt = {
+        shirtId: shirtName,
+        size: shirtSize,
+        quantity: shirtQuantity,
+      };
+
+      currentCart.push(shirt);
+      localStorage.setItem("cart", JSON.stringify(currentCart));
+      
+    })
+    .catch(function(error) {
+      console.log("Error checking inventory:", error);
+    });
 }

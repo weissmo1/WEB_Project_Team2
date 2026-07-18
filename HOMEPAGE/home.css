@@ -41,7 +41,8 @@
   transition: background-color 0.3s ease;
 }
 
-#password {
+/* איחוד העיצוב לשני השדות */
+#username, #password {
   background-color: #acbac4;
   color: #30364f;
   border: 2px solid #30364f;
